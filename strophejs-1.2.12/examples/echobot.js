@@ -54,12 +54,7 @@ function onMessage(msg) {
 	log('ECHOBOT: I got a message from ' + from + ': ' + 
 	    Strophe.getText(body));
     
-	var reply = $msg({to: from, from: to, type: 'chat'})
-            .cnode(Strophe.copyElement(body));
-	connection.send(reply.tree());
-
-	// log('ECHOBOT: I sent ' + from + 'Message: ' + Strophe.getText(body));
-	alert(from +"\n"+  + Strophe.getText(body));
+	alert(from +"\n"+ Strophe.getText(body));
     }
 
     // we must return true to keep the handler alive.  
@@ -68,13 +63,6 @@ function onMessage(msg) {
 }
 $(document).ready(function () {
     connection = new Strophe.Connection(BOSH_SERVICE);
-
-    // Uncomment the following lines to spy on the wire traffic.
-    //connection.rawInput = function (data) { log('RECV: ' + data); };
-    //connection.rawOutput = function (data) { log('SEND: ' + data); };
-
-    // Uncomment the following line to see all the debug output.
-    //Strophe.log = function (level, msg) { log('LOG: ' + msg); };
 
 
     $('#connect').bind('click', function () {
@@ -90,9 +78,9 @@ $(document).ready(function () {
 	    connection.disconnect();
 	}
     });
-    $('#msg1').bind('click', function (){
-    	var message = "some other message";
-	    var to = 'nate@nathan-thinkpad-w541';
+    $('#BrokenHeadLight').bind('click', function (){
+    	var message = "Broken Head Light";
+	    var to = 'test@nathan-thinkpad-w541.local';
 	    if (message && to) {
 	        var msg = $msg({
 	            to: to,
@@ -105,5 +93,53 @@ $(document).ready(function () {
 
 	        log('I sent ' + to + ': ' + message);
 		}
+	});
+	$('#BrokenTailLight').bind('click', function (){
+    	var message = "Broken Tail Light";
+	    var to = 'test@nathan-thinkpad-w541.local';
+	    if (message && to) {
+	        var msg = $msg({
+	            to: to,
+	            type: 'chat'
+	        })
+	            .cnode(Strophe.xmlElement('body', message)).up()
+	            .c('active', { xmlns: "http://jabber.org/protocol/chatstates" });
+
+	        connection.send(msg);
+
+	        log('I sent ' + to + ': ' + message);
+		}	
+	});
+	$('#GasCapOpen').bind('click', function (){
+    	var message = "Gas Cap Open";
+	    var to = 'test@nathan-thinkpad-w541.local';
+	    if (message && to) {
+	        var msg = $msg({
+	            to: to,
+	            type: 'chat'
+	        })
+	            .cnode(Strophe.xmlElement('body', message)).up()
+	            .c('active', { xmlns: "http://jabber.org/protocol/chatstates" });
+
+	        connection.send(msg);
+
+	        log('I sent ' + to + ': ' + message);
+		}	
+	});
+	$('#TrunkOpen').bind('click', function (){
+    	var message = "Trunk Open";
+	    var to = 'test@nathan-thinkpad-w541.local';
+	    if (message && to) {
+	        var msg = $msg({
+	            to: to,
+	            type: 'chat'
+	        })
+	            .cnode(Strophe.xmlElement('body', message)).up()
+	            .c('active', { xmlns: "http://jabber.org/protocol/chatstates" });
+
+	        connection.send(msg);
+
+	        log('I sent ' + to + ': ' + message);
+		}	
 	});
 });

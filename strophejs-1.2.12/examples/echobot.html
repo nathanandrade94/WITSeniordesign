@@ -1,5 +1,5 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <title>Strophe.js Echobot Example</title>
   <script type='text/javascript'
@@ -11,7 +11,7 @@
   <link rel="stylesheet" type="text/css" href="/home/nathan/Downloads/scripts/strophejs-1.2.12/css/style2.css">
 </head>
 <body>
-  <div id='login' style='text-align: center'>
+  <div id='login' class="row" style='text-align: center'>
     <form name='cred'>
       <label for='jid'>JID:</label>
       <input type='text' id='jid' />
@@ -20,8 +20,18 @@
       <label for='pass'>Password:</label>
       <input type='password' id='pass' />
       <input type='button' class='a_demo_two' id='connect' value='connect' />
-      <input type='button' id='msg1' value='message' />
+      
     </form>
+  </div>
+  <div class="row">
+      <div class="col-sm-6">
+          <input type='button' class='a_demo_two' id='BrokenHeadLight' value='Broken Head Light' />
+          <input type='button' class='a_demo_two' id='BrokenTailLight' value='Broken Tail Light' />
+      </div>
+      <div class="col-sm-6">
+          <input type='button' class='a_demo_two' id='GasCapOpen' value='Gas Cap Open' />
+          <input type='button' class='a_demo_two' id='TrunkOpen' value='Trunk Open' />
+      </div>
   </div>
   <hr />
   <div id='log'></div>
