@@ -8,20 +8,24 @@
 	  src='../strophe.js'></script>
   <script type='text/javascript'
 	  src='echobot.js'></script>
+  <script type='text/javascript' src='../bootstrap-4.0.0-alpha.6-dist/js/bootstrap.min.js'></script>
   <link rel="stylesheet" type="text/css" href="/home/nathan/Downloads/scripts/strophejs-1.2.12/css/style2.css">
+  <link rel="stylesheet" type="text/css" href="../bootstrap-4.0.0-alpha.6-dist/css/bootstrap.css">
 </head>
 <body>
   <div id='login' class="row" style='text-align: center'>
-    <form name='cred'>
-      <label for='jid'>JID:</label>
-      <input type='text' id='jid' />
-      <label for='to'>To:</label>
-      <input type='text' id='to' />
-      <label for='pass'>Password:</label>
-      <input type='password' id='pass' />
-      <input type='button' class='a_demo_two' id='connect' value='connect' />
-      
-    </form>
+    <div class="col-sm-12">
+      <form name='cred'>
+        <label for='jid'>JID:</label>
+        <input type='text' id='jid' />
+        <label for='to'>To:</label>
+        <input type='text' id='to' />
+        <label for='pass'>Password:</label>
+        <input type='password' id='pass' />
+        <input type='button' class='a_demo_two' id='connect' value='connect' /> 
+      </form>
+    </div>
+
   </div>
   <div class="row">
       <div class="col-sm-6">
