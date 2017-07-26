@@ -70,8 +70,8 @@ $(document).ready(function () {
 	if (button.value == 'connect') {
 	    button.value = 'disconnect';
 
-	    connection.connect($('#jid').get(0).value,
-			       $('#pass').get(0).value,
+	    connection.connect('nate@nathan-thinkpad-w541.local',
+			       'design1',
 			       onConnect);
 	} else {
 	    button.value = 'connect';
@@ -80,7 +80,7 @@ $(document).ready(function () {
     });
     $('#BrokenHeadLight').bind('click', function (){
     	var message = "Broken Head Light";
-	    var to = 'test@nathan-thinkpad-w541.local';
+	    var to = $('#to').get(0).value;
 	    if (message && to) {
 	        var msg = $msg({
 	            to: to,
@@ -96,7 +96,7 @@ $(document).ready(function () {
 	});
 	$('#BrokenTailLight').bind('click', function (){
     	var message = "Broken Tail Light";
-	    var to = 'test@nathan-thinkpad-w541.local';
+	    var to = $('#to').get(0).value;
 	    if (message && to) {
 	        var msg = $msg({
 	            to: to,
@@ -112,7 +112,7 @@ $(document).ready(function () {
 	});
 	$('#GasCapOpen').bind('click', function (){
     	var message = "Gas Cap Open";
-	    var to = 'test@nathan-thinkpad-w541.local';
+	   	var to = $('#to').get(0).value;
 	    if (message && to) {
 	        var msg = $msg({
 	            to: to,
@@ -128,7 +128,7 @@ $(document).ready(function () {
 	});
 	$('#TrunkOpen').bind('click', function (){
     	var message = "Trunk Open";
-	    var to = 'test@nathan-thinkpad-w541.local';
+	    var to = $('#to').get(0).value;
 	    if (message && to) {
 	        var msg = $msg({
 	            to: to,
