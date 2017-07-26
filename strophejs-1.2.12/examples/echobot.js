@@ -79,7 +79,7 @@ $(document).ready(function () {
 	}
     });
     $('#BrokenHeadLight').bind('click', function (){
-    	var message = "Broken Head Light";
+    	var message = "Your head light is broken";
 	    var to = $('#to').get(0).value;
 	    if (message && to) {
 	        var msg = $msg({
@@ -95,7 +95,7 @@ $(document).ready(function () {
 		}
 	});
 	$('#BrokenTailLight').bind('click', function (){
-    	var message = "Broken Tail Light";
+    	var message = "Your tail light is broken";
 	    var to = $('#to').get(0).value;
 	    if (message && to) {
 	        var msg = $msg({
@@ -111,7 +111,7 @@ $(document).ready(function () {
 		}	
 	});
 	$('#GasCapOpen').bind('click', function (){
-    	var message = "Gas Cap Open";
+    	var message = "Your gas cap is open";
 	   	var to = $('#to').get(0).value;
 	    if (message && to) {
 	        var msg = $msg({
@@ -127,7 +127,39 @@ $(document).ready(function () {
 		}	
 	});
 	$('#TrunkOpen').bind('click', function (){
-    	var message = "Trunk Open";
+    	var message = "Your trunk is open";
+	    var to = $('#to').get(0).value;
+	    if (message && to) {
+	        var msg = $msg({
+	            to: to,
+	            type: 'chat'
+	        })
+	            .cnode(Strophe.xmlElement('body', message)).up()
+	            .c('active', { xmlns: "http://jabber.org/protocol/chatstates" });
+
+	        connection.send(msg);
+
+	        log('I sent ' + to + ': ' + message);
+		}	
+	});
+	$('#BlinkerOn').bind('click', function (){
+    	var message = "Your blinker is on";
+	    var to = $('#to').get(0).value;
+	    if (message && to) {
+	        var msg = $msg({
+	            to: to,
+	            type: 'chat'
+	        })
+	            .cnode(Strophe.xmlElement('body', message)).up()
+	            .c('active', { xmlns: "http://jabber.org/protocol/chatstates" });
+
+	        connection.send(msg);
+
+	        log('I sent ' + to + ': ' + message);
+		}	
+	});
+	$('#TireLooksLow').bind('click', function (){
+    	var message = "Your tire pressure looks low";
 	    var to = $('#to').get(0).value;
 	    if (message && to) {
 	        var msg = $msg({
